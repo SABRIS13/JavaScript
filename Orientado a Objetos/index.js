@@ -12,6 +12,12 @@ class CuentaCorriente
     numero;
     saldo;
     agencia;
+
+    constructor(){
+        this.saldo=0;
+        this.numero="";
+        this.agencia="";
+    }
     
     depositoCuenta(valor){
         this.saldo += valor;
@@ -19,7 +25,8 @@ class CuentaCorriente
     }
 
     retiroCuenta(valor){
-        this
+        this.saldo -= valor;
+        console.log("El saldo actual es de: " +this.saldo);
     }
 }
 
