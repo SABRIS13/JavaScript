@@ -1,3 +1,5 @@
+
+//Definir Clases
 class Cliente
 {
     nombreCliente;
@@ -15,8 +17,13 @@ class CuentaCorriente
         this.saldo += valor;
         console.log("El saldo total es de: " +this.saldo);
     }
+
+    retiroCuenta(valor){
+        this
+    }
 }
 
+// Definir clientes
 const cliente1 = new Cliente();
 
 cliente1.nombreCliente = "José";
@@ -42,10 +49,7 @@ cuentaCorriente2.numero = "123434343";
 cuentaCorriente2.saldo = 1000;
 cuentaCorriente2.agencia=1004;
 
-console.log(cliente1);
-console.log(cuentaCorriente1);
-console.log(cliente2);
-console.log(cuentaCorriente2);
+//Movimientos
 
 console.log(cuentaCorriente2.saldo)
 cuentaCorriente2.depositoCuenta(100)
