@@ -20,12 +20,18 @@ class CuentaCorriente
     }
     
     depositoCuenta(valor){
+        if(valor>0)
         this.saldo += valor;
         console.log("El saldo total es de: " +this.saldo);
     }
 
     retiroCuenta(valor){
-        this.saldo -= valor;
+        if (valor<=this.saldo && valor>0)
+            this.saldo -= valor;
+            console.log("El saldo actual es de: " +this.saldo);
+    }
+
+    verSaldo(){
         console.log("El saldo actual es de: " +this.saldo);
     }
 }
@@ -58,5 +64,4 @@ cuentaCorriente2.agencia=1004;
 
 //Movimientos
 
-console.log(cuentaCorriente2.saldo)
-cuentaCorriente2.depositoCuenta(100)
+cuentaCorriente2.verSaldo()
