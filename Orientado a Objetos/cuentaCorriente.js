@@ -5,12 +5,14 @@ export class CuentaCorriente
     numero;
     agencia;
     #saldo;
+    static cantidadCuentas =0;
 
     constructor(cliente, numero,agencia) {
         this.cliente=cliente;
         this.numero = numero;
         this.agencia = agencia;
         this.#saldo = 0;
+        CuentaCorriente.cantidadCuentas++;
     }
 
     set cliente(valor){
