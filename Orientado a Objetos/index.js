@@ -31,7 +31,7 @@ cuentaDeMaria.numero = '2';
 cuentaDeMaria.agencia = '002';
 cuentaDeMaria.cliente = cliente2;
 
-
+/* Movimientos de cuenta saldo
 cuentaDeLeonardo.transferirParaCuenta(100,cuentaDeMaria);
 const saldoMaria = cuentaDeMaria.verSaldo();
 
@@ -39,4 +39,8 @@ const saldoMaria = cuentaDeMaria.verSaldo();
 saldo = cuentaDeLeonardo.verSaldo();
 console.log('El saldo actual de María ' +saldoMaria);
 console.log('El saldo actual de Leonardo ' +saldo);
-
+*/
+if (cuentaDeMaria.cliente)
+    console.log(cuentaDeMaria.cliente);
+else
+    console.log(cuentaDeMaria);
