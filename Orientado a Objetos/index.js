@@ -1,34 +1,42 @@
 //Importación de clases
 import {CuentaCorriente} from "./cuentaCorriente.js";
-import {Cliente} from "./Cliente.js";
+import {Cliente} from "./cliente.js";
 
 
 // Definir clientes
-const cliente1 = new Cliente();
 
-cliente1.nombreCliente = "José";
-cliente1.dniCliente = "13232";
-cliente1.rutCliente="V167588";
+const cliente = new Cliente();
+cliente.nombreCliente = 'Leonardo';
+cliente.dniCliente = '13804050';
+cliente.rutCliente = '123224';
 
-const cuentaCorriente1 = new CuentaCorriente();
+const cuentaDeLeonardo = new CuentaCorriente();
+cuentaDeLeonardo.numero = '1';
+cuentaDeLeonardo.agencia = '001';
+cuentaDeLeonardo.cliente = cliente;
 
-cuentaCorriente1.numero = "232323";
-cuentaCorriente1.saldo = 5000;
-cuentaCorriente1.agencia=1001;
+
+
+cuentaDeLeonardo.depositoEnCuenta(250);
+var saldo = cuentaDeLeonardo.verSaldo(); 
+console.log('El Saldo actual (CuentaLeonardo) '+ saldo);
 
 const cliente2 = new Cliente();
+cliente2.nombreCliente = 'Maria';
+cliente2.dniCliente = '16979808';
+cliente2.rutCliente = '8989';
 
-cliente2.nombreCliente = "Leonardo";
-cliente2.dniCliente = "13804050";
-cliente2.rutCliente="V156746";
+const cuentaDeMaria = new CuentaCorriente();
+cuentaDeMaria.numero = '2';
+cuentaDeMaria.agencia = '002';
+cuentaDeMaria.cliente = cliente2;
 
 
-const cuentaCorriente2 = new CuentaCorriente();
+cuentaDeLeonardo.transferirParaCuenta(100,cuentaDeMaria);
+const saldoMaria = cuentaDeMaria.verSaldo();
 
-cuentaCorriente2.numero = "123434343";
-cuentaCorriente2.saldo = 2000;
-cuentaCorriente2.agencia=1004;
 
-//Movimientos
+saldo = cuentaDeLeonardo.verSaldo();
+console.log('El saldo actual de María ' +saldoMaria);
+console.log('El saldo actual de Leonardo ' +saldo);
 
-cuentaCorriente2.verSaldo()

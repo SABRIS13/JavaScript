@@ -1,28 +1,35 @@
 export class CuentaCorriente
 {
+    cliente;
     numero;
-    saldo;
     agencia;
+    #saldo;
 
-    constructor(){
-        this.saldo=0;
-        this.numero="";
-        this.agencia="";
-    }
-    
-    depositoCuenta(valor){
-        if(valor>0)
-        this.saldo += valor;
-        console.log("El saldo total es de: " +this.saldo);
+    constructor() {
+        this.cliente = null;
+        this.numero = '';
+        this.agencia = '';
+        this.#saldo = 0;
     }
 
-    retiroCuenta(valor){
-        if (valor<=this.saldo && valor>0)
-            this.saldo -= valor;
-            console.log("El saldo actual es de: " +this.saldo);
+    depositoEnCuenta(valor) {
+        if (valor > 0)
+            this.#saldo += valor;
+        return this.#saldo;
     }
 
-    verSaldo(){
-        console.log("El saldo actual es de: " +this.saldo);
+    retirarDeCuenta(valor) {
+        if (valor <= this.#saldo)
+            this.#saldo -= valor;
+        return this.#saldo;
+    }
+
+    verSaldo() {
+        return this.#saldo;
+    }
+
+    transferirParaCuenta(valor,cuentaDestino) {
+        this.retirarDeCuenta(valor);
+        cuentaDestino.depositoEnCuenta(valor);
     }
 }
