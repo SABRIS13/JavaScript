@@ -3,12 +3,21 @@ export class cuenta{
     #cliente;
     #saldo;
 
-    constructor(cliente,saldo,numero,agencia){
+    constructor(cliente,numero,agencia,saldo){
        this.numero=numero;
        this.agencia=agencia; 
        this.#cliente=cliente;
        this.#saldo=saldo;
     
+    }
+
+    set cliente(valor){
+        if (valor instanceof Cliente)
+            this.#cliente=valor;
+    }
+
+    get cliente(){
+        return this.#cliente;
     }
 
     depositoEnCuenta(valor) {
