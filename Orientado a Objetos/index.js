@@ -2,7 +2,6 @@
 import {Cliente} from "./cliente.js";
 import {cuentaAhorro} from "./cuentaAhorro.js";
 import {CuentaCorriente} from "./cuentaCorriente.js";
-import {cuenta} from "./cuenta.js";
 
 
 // Definir clientes
@@ -18,3 +17,15 @@ const cuentaDeMaria = new CuentaCorriente(cliente2,'2','002');
 
 const cuentaAhorroLeonardo=new cuentaAhorro(cliente,'987345','001',0);
 console.log(cuentaAhorroLeonardo);
+
+//Acciones
+console.log(cuentaDeLeonardo);
+cuentaDeLeonardo.depositoEnCuenta(150);
+console.log(cuentaDeLeonardo.verSaldo());
+cuentaDeLeonardo.retirarDeCuenta(70);
+console.log(cuentaDeLeonardo.verSaldo());
+console.log(cuentaAhorroLeonardo);
+cuentaAhorroLeonardo.depositoEnCuenta(200);
+console.log(cuentaAhorroLeonardo.verSaldo());
+cuentaAhorroLeonardo.retirarDeCuenta(120);
+console.log(cuentaAhorroLeonardo.verSaldo());
