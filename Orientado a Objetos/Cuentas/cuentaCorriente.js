@@ -1,4 +1,4 @@
-import {Cliente} from "./cliente.js";
+import {Cliente} from "../cliente.js";
 import {cuenta} from "./cuenta.js";
 
 export class CuentaCorriente  extends cuenta
