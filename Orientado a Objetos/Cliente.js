@@ -16,7 +16,9 @@ export class Cliente
         this.#clave=clave;
     }
 
+    
     autenticable(clave){
-        return false;
+        return true;
     }
+    
 }
